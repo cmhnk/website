@@ -49,11 +49,19 @@ body {
   grid-row: auto;
 }
 .right-body {
-  background: red;
   grid-column: 7 / 11;
   grid-row: auto;
 }
 .right-space {
   grid-column: 12;
   grid-row: auto;
+}
+
+.image {
+  width: 300px;
+  height: 500px;
+  background: url('corinnehenk.jpg') 0 0 no-repeat;
+  background-size: cover;
+  margin: 1em auto;
+  // background-image: url('kitten.jpg');
 }

@@ -1,3 +1,7 @@
 import './styles/base.scss';
 
-console.info('hello!');
+import $ from 'jquery';
+
+// $(document).ready(function(){
+//   $(."right-body").append("hjkklsi");
+// });
