@@ -1,12 +1,12 @@
 {
-  "name": "webpack2-express-heroku-starter",
+  "name": "corinne-henk-portfolio",
   "version": "0.1.0",
-  "description": "Starter webpack 2/express app",
+  "description": "Corinne's portfolio website",
   "repository": {
     "type": "git",
-    "url": "git://github.com/tublitzed/webpack2-express-heroku-starter.git"
+    "url": "https://github.com/cmhnk/website.git"
   },
-  "author": "Rachel Tublitz",
+  "author": "Corinne Henk",
   "license": "MIT",
   "dependencies": {
     "css-loader": "^0.28.0",
