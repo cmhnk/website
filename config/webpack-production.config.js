@@ -1,62 +1,11 @@
 const path = require('path');
-const webpack = require('webpack');
-const sharedPlugins = require('./sharedPlugins');
+const devConfig = require('./webpack.config.js');
 
-const plugins = [
-  new webpack.HotModuleReplacementPlugin(),
-  new webpack.DefinePlugin({
-    'process.env.NODE_ENV': JSON.stringify('development'),
-  }),
-];
-
-module.exports = {
-  devtool: 'eval-source-map',
+const config = Object.assign({}, devConfig, {
   entry: [
-    'webpack-hot-middleware/client?reload=true',
-    path.join(__dirname, '/../app/src/main.js'),
+    // path.join(__dirname, '/../app/src/main.js'),
+    path.join(__dirname, '/../dist/bundle.js'),
   ],
-  output: {
-    path: path.join(__dirname, '/../dist/'),
-    filename: 'bundle.js',
-    publicPath: '/',
-  },
-  plugins: plugins.concat(sharedPlugins),
-  module: {
-    rules: [{
-      exclude: /node_modules/,
-      test: /\.jsx$/,
-      use: [{
-        loader: 'babel-loader',
-        options: {
-          presets: ['latest'],
-        },
-      }],
-    }, {
-        test: /\.(png|jpg|gif)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192
-            }
-          }
-        ]
-      }, {
-      test: /\.scss/,
-      use: [
-        'style-loader', {
-          loader: 'css-loader',
-          options: {
-            sourceMap: true,
-          },
-        }, {
-          loader: 'sass-loader',
-          options: {
-            sourceMap: true,
-            includePaths: [path.join(__dirname, '/../app/src/styles/')],
-          },
-        },
-      ],
-    }],
-  },
-};
+});
+
+module.exports = config;
